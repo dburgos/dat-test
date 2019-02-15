@@ -43,8 +43,8 @@ class ApiList extends Component {
   render(state) {
     const list = this.props.list;
     const showPrevBtn = this.state.page > 0;
-    const prevPageBtn = <button className="page-selector" onClick={this.prevPage}><Emoji symbol="⏪" /></button>;
-    const nextPageBtn = <button className="page-selector" onClick={this.nextPage}><Emoji symbol="⏩" /></button>;
+    const prevPageBtn = <button id="prevPage" className="page-selector" onClick={this.prevPage}><Emoji symbol="⏪" /></button>;
+    const nextPageBtn = <button id="nextPage" className="page-selector" onClick={this.nextPage}><Emoji symbol="⏩" /></button>;
     const pagination = <h4>Page {this.state.page + 1} {showPrevBtn ? prevPageBtn : null} {nextPageBtn}</h4>;
     return (<div>
       <h1>List</h1>
@@ -63,7 +63,6 @@ class ApiList extends Component {
           }
         </tbody>
       </table>
-      {pagination}
     </div>)
   }
 }
