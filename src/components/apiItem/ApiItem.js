@@ -17,7 +17,7 @@ class ApiList extends Component {
       comment = el.comment_text.substring(0, 140) + '...';
     }
     return (
-      <tr key={el.story_id}>
+      <tr key={el.objectID}>
         <td>{el.author}</td>
         <td>{moment(el.created_at).format('HH:mm DD/MM/YYYY')}</td>
         <td><a href={el.url} target='_blank' rel='noopener noreferrer'>{el.title}</a></td>

@@ -22,10 +22,10 @@ class ContactForm extends Component {
     const form =
       <form onSubmit={this.onSubmit}>
         <label htmlFor="name">Your name:
-            <input type="text" name="name" required />
+          <input type="text" name="name" required />
         </label>
         <label htmlFor="message">Message:
-            <textarea rows="4" name="message" required></textarea>
+          <textarea rows="4" name="message" required></textarea>
         </label>
         <input type="submit" value="Send" />
       </form>;

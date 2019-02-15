@@ -9,14 +9,45 @@ const mapStateToProps = state => {
 };
 
 class ApiList extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      page: 0
+    };
+    this.changePage = this.changePage.bind(this);
+    this.prevPage = this.prevPage.bind(this);
+    this.nextPage = this.nextPage.bind(this);
+  }
+
   componentWillMount() {
-    this.props.loadData()
+    this.props.loadData(this.state.page);
+  }
+
+  changePage(delta) {
+    this.setState({
+      page: this.state.page + delta
+    });
+    this.props.loadData(this.state.page);
+  }
+
+  prevPage() {
+    this.changePage(-1);
+  }
+
+  nextPage() {
+    this.changePage(1);
   }
 
   render(state) {
     const list = this.props.list;
+    const showPrevBtn = this.state.page > 0;
+    const prevPageBtn = <button className="page-selector" onClick={this.prevPage}><Emoji symbol="⏪" /></button>;
+    const nextPageBtn = <button className="page-selector" onClick={this.nextPage}><Emoji symbol="⏩" /></button>;
+    const pagination = <h4>Page {this.state.page + 1} {showPrevBtn ? prevPageBtn : null} {nextPageBtn}</h4>;
     return (<div>
       <h1>List</h1>
+      {pagination}
       <table>
         <thead>
           <tr>
@@ -28,10 +59,11 @@ class ApiList extends Component {
         </thead>
         <tbody>
           {
-            list && list.map(el => <ApiItem item={el} />)
+            list && list.map((el, index) => <ApiItem item={el} key={index} />)
           }
         </tbody>
       </table>
+      {pagination}
     </div>)
   }
 }
