@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { loadData } from '../../redux/actions/actions'
 import ApiItem from '../apiItem/ApiItem'
 import Emoji from '../emoji/Emoji'
+import './ApiList.css';
 
 const mapStateToProps = state => {
   return state;
@@ -53,8 +54,7 @@ class ApiList extends Component {
           <tr>
             <th><Emoji symbol="👤" /> User</th>
             <th><Emoji symbol="🕓" /> Timestamp</th>
-            <th><Emoji symbol="🔗" /> Link</th>
-            <th><Emoji symbol="💬" /> Comment</th>
+            <th><Emoji symbol="📦" /> Content</th>
           </tr>
         </thead>
         <tbody>
