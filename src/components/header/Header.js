@@ -8,6 +8,7 @@ const Header = () => (
       <ul>
         <li><NavLink to={`${process.env.PUBLIC_URL}/`}>Home</NavLink></li>
         <li><NavLink to={`${process.env.PUBLIC_URL}/list`}>List</NavLink></li>
+        <li><NavLink to={`${process.env.PUBLIC_URL}/contact`}>Contact</NavLink></li>
       </ul>
     </nav>
   </header>
