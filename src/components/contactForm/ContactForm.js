@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Emoji from '../emoji/Emoji'
+import './ContactForm.css';
 
 class ContactForm extends Component {
 

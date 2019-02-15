@@ -1,0 +1,16 @@
+header {
+  background: lightblue;
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+header ul {
+  list-style: none;
+  padding: 0;
+}
+header li {
+  display: inline-block;
+  margin: 0 10px;
+}
