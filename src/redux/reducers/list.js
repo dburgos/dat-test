@@ -3,7 +3,7 @@ const defaultState = [];
 const list = (state = defaultState, action) => {
   switch (action.type) {
     case 'LOAD_DATA':
-      return action.list
+      return action.data || []
     default:
       return state
   }

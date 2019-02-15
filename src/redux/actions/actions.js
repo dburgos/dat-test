@@ -7,7 +7,7 @@ export function loadData(page = 0) {
     dispatch({ type: 'LOAD_DATA' });
     const loadPath = API.replace('{page}', page);
     return axios.get(loadPath).then((res) => {
-      dispatch({ type: 'LOAD_DATA', data: res.hits });
+      dispatch({ type: 'LOAD_DATA', data: res.data.hits });
     }).catch((err) => {
       dispatch({ type: 'LOAD_DATA', data: [] });
     });
